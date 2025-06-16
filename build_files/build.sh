@@ -61,6 +61,7 @@ dnf5 -y install iperf3
 dnf5 -y install luajit
 dnf5 -y install make
 dnf5 -y install mediainfo
+dnf5 -y install mosh
 dnf5 -y install neovim
 dnf5 -y install newsboat
 dnf5 -y install pandoc
@@ -110,6 +111,7 @@ dnf5 -y install docker-ce-cli
 dnf5 -y install containerd.io
 dnf5 -y install docker-buildx-plugin
 dnf5 -y install docker-compose-plugin
+# FIX: create systemd service that creates docker group and then disables itself permanently
 
 # virtualization
 dnf5 -y group install --with-optional virtualization
