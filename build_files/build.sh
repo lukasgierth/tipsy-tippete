@@ -64,7 +64,6 @@ dnf5 -y install make
 dnf5 -y install mediainfo
 dnf5 -y install neovim
 dnf5 -y install newsboat
-dnf5 -y install nodejs
 dnf5 -y install pandoc
 dnf5 -y install picocom
 dnf5 -y install procs
