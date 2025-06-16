@@ -99,6 +99,7 @@ dnf5 -y install lazygit
 dnf5 -y copr disable atim/lazygit
 
 # TODO: add blisp manually here
+# TODO: add rs-tftpd
 
 # mise
 #dnf5 install dnf-plugins-core
