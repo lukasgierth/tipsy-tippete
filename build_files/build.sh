@@ -13,77 +13,77 @@ set -ouex pipefail
 # remove packages
 
 # no need for them
-dnf5 remove gnome-software
-dnf5 remove gnome-tour
-dnf5 remove gnome-tweaks
-dnf5 remove xorg-x11-xauth
-# installed with flatpak instead
-dnf5 remove firefox-langpacks
-dnf5 remove firefox
-# legacy net-tools
-dnf5 remove net-tools
-# replaced by neovim
-dnf5 remove vim
+dnf5 -y remove gnome-software
+dnf5 -y remove gnome-tour
+dnf5 -y remove gnome-tweaks
+dnf5 -y remove xorg-x11-xauth
+# -y installed with flatpak instead
+dnf5 -y remove firefox-langpacks
+dnf5 -y remove firefox
+# -y legacy net-tools
+dnf5 -y remove net-tools
+# -y replaced by neovim
+dnf5 -y remove vim
 # replaced by btop
-dnf5 remove htop
+dnf5 -y remove htop
 
 # TODO:
 # basic tools
-dnf5 install abcde
-dnf5 install android-tools
-dnf5 install ansible
-dnf5 install aria2
-dnf5 install bat
-dnf5 install borgbackup
-dnf5 install borgmatic
-dnf5 install btop
-dnf5 install cmake
-dnf5 install ctags
-dnf5 install curl
-dnf5 install ddrescue
-dnf5 install detox
-dnf5 install dfu-utils
-dnf5 install distrobox
-dnf5 install duf
-dnf5 install gcc gcc-c++ glibc-static
-dnf5 install gdu
-dnf5 install esptool
-dnf5 install f3
-dnf5 install fastfetch
-dnf5 install fd-find
-dnf5 install ffmpeg
-dnf5 install fish
-dnf5 install fzf
-dnf5 install git
-dnf5 install gzip
-dnf5 install httpx
-dnf5 install ImageMagick
-dnf5 install iperf3
-dnf5 install luajit
-dnf5 install make
-dnf5 install mediainfo
-dnf5 install neovim
-dnf5 install newsboat
-dnf5 install nodejs
-dnf5 install pandoc
-dnf5 install picocom
-dnf5 install procs
-dnf5 install ripgrep
-dnf5 install rsync
-dnf5 install ruby
-dnf5 install shntool
-dnf5 install stow
-dnf5 install stress-ng
-dnf5 install subfinder
-dnf5 install tcpdump
-dnf5 install tealdeer
-dnf5 install unzip
-dnf5 install yt-dlp
-dnf5 install gnome-shell-extension-caffeine
-dnf5 install tailscale
-dnf5 install tmux
-dnf5 install wireshark
-dnf5 install whipper
+dnf5 -y install abcde
+dnf5 -y install android-tools
+dnf5 -y install ansible
+dnf5 -y install aria2
+dnf5 -y install bat
+dnf5 -y install borgbackup
+dnf5 -y install borgmatic
+dnf5 -y install btop
+dnf5 -y install cmake
+dnf5 -y install ctags
+dnf5 -y install curl
+dnf5 -y install ddrescue
+dnf5 -y install detox
+dnf5 -y install dfu-utils
+dnf5 -y install distrobox
+dnf5 -y install duf
+dnf5 -y install gcc gcc-c++ glibc-static
+dnf5 -y install gdu
+dnf5 -y install esptool
+dnf5 -y install f3
+dnf5 -y install fastfetch
+dnf5 -y install fd-find
+dnf5 -y install ffmpeg
+dnf5 -y install fish
+dnf5 -y install fzf
+dnf5 -y install git
+dnf5 -y install gzip
+dnf5 -y install httpx
+dnf5 -y install ImageMagick
+dnf5 -y install iperf3
+dnf5 -y install luajit
+dnf5 -y install make
+dnf5 -y install mediainfo
+dnf5 -y install neovim
+dnf5 -y install newsboat
+dnf5 -y install nodejs
+dnf5 -y install pandoc
+dnf5 -y install picocom
+dnf5 -y install procs
+dnf5 -y install ripgrep
+dnf5 -y install rsync
+dnf5 -y install ruby
+dnf5 -y install shntool
+dnf5 -y install stow
+dnf5 -y install stress-ng
+dnf5 -y install subfinder
+dnf5 -y install tcpdump
+dnf5 -y install tealdeer
+dnf5 -y install unzip
+dnf5 -y install yt-dlp
+dnf5 -y install gnome-shell-extension-caffeine
+dnf5 -y install tailscale
+dnf5 -y install tmux
+dnf5 -y install wireshark
+dnf5 -y install whipper
 
 # dfu-programmer copr
 dnf5 -y copr enable erovia/dfu-programmer
@@ -102,27 +102,19 @@ dnf5 -y copr disable atim/lazygit
 # TODO: add rs-tftpd
 
 # mise
-#dnf5 install dnf-plugins-core
-dnf5 config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
-dnf5 install mise
+dnf5 -y config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
+dnf5 -y install mise
 
-# TODO: docker
-dnf5 config-manager add-repo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
-dnf5 install docker-ce
-dnf5 install docker-ce-cli
-dnf5 install containerd.io
-dnf5 install docker-buildx-plugin
-dnf5 install docker-compose-plugin
+# docker
+dnf5 -y config-manager add-repo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
+dnf5 -y install docker-ce
+dnf5 -y install docker-ce-cli
+dnf5 -y install containerd.io
+dnf5 -y install docker-buildx-plugin
+dnf5 -y install docker-compose-plugin
 
-# virt
-dnf5 group install --with-optional virtualization
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# virtualization
+dnf5 -y group install --with-optional virtualization
 
 # enable services
 systemctl enable podman.socket
