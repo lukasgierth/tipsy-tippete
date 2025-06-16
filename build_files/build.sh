@@ -63,6 +63,7 @@ dnf5 install luajit
 dnf5 install make
 dnf5 install mediainfo
 dnf5 install neovim
+dnf5 install newsboat
 dnf5 install nodejs
 dnf5 install pandoc
 dnf5 install picocom
@@ -96,6 +97,8 @@ dnf5 -y copr disable alternateved/eza
 dnf5 -y copr enable atim/lazygit
 dnf5 -y install lazygit
 dnf5 -y copr disable atim/lazygit
+
+# TODO: add blisp manually here
 
 # mise
 #dnf5 install dnf-plugins-core
