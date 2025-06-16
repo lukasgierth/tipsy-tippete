@@ -85,8 +85,17 @@ dnf5 install wireshark
 dnf5 install whipper
 
 # dfu-programmer copr
+dnf5 -y copr enable erovia/dfu-programmer
+dnf5 -y install dfu-programmer
+dnf5 -y copr disable erovia/dfu-programmer
 # eza copr
+dnf5 -y copr enable alternateved/eza
+dnf5 -y install eza
+dnf5 -y copr disable alternateved/eza
 # lazygit copr
+dnf5 -y copr enable atim/lazygit
+dnf5 -y install lazygit
+dnf5 -y copr disable atim/lazygit
 
 # mise
 #dnf5 install dnf-plugins-core
