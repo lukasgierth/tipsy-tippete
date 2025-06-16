@@ -16,7 +16,6 @@ set -ouex pipefail
 dnf5 -y remove gnome-software
 dnf5 -y remove gnome-tour
 dnf5 -y remove gnome-tweaks
-dnf5 -y remove xorg-x11-xauth
 # -y installed with flatpak instead
 dnf5 -y remove firefox-langpacks
 dnf5 -y remove firefox
