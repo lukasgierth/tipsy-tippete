@@ -41,7 +41,7 @@ dnf5 -y install ctags
 dnf5 -y install curl
 dnf5 -y install ddrescue
 dnf5 -y install detox
-dnf5 -y install dfu-utils
+dnf5 -y install dfu-util
 dnf5 -y install distrobox
 dnf5 -y install duf
 dnf5 -y install gcc gcc-c++ glibc-static
