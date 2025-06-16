@@ -104,7 +104,7 @@ dnf5 -y config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.rep
 dnf5 -y install mise
 
 # docker
-dnf5 -y config-manager add-repo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
+dnf5 -y config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
 dnf5 -y install docker-ce
 dnf5 -y install docker-ce-cli
 dnf5 -y install containerd.io
