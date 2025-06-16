@@ -122,3 +122,9 @@ systemctl enable docker.service
 # disable auto-updates (can be enabled again through ujust)
 systemctl disable flatpak-system-update.timer
 systemctl disable rpm-ostreed-automatic.timer
+
+# remove desktop files
+rm -f /usr/share/applications/gcdmaster.desktop
+rm -f /usr/share/applications/btop.desktop
+rm -f /usr/share/applications/nvtop.desktop
+rm -f /usr/share/applications/nvim.desktop
