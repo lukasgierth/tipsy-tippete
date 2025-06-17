@@ -13,29 +13,25 @@ set -ouex pipefail
 # remove packages
 
 # no need for them
+dnf5 -y remove firefox
+dnf5 -y remove firefox-langpacks
+dnf5 -y remove gnome-classic-session
+dnf5 -y remove gnome-shell-extension-apps-menu
+dnf5 -y remove gnome-shell-extension-background-logo
+dnf5 -y remove gnome-shell-extension-launch-new-instance
+dnf5 -y remove gnome-shell-extension-places-menu
+dnf5 -y remove gnome-shell-extension-window-list
 dnf5 -y remove gnome-software
 dnf5 -y remove gnome-tour
 dnf5 -y remove gnome-tweaks
-dnf5 -y remove yelp
-dnf5 -y remove gnome-classic-session
-dnf5 -y remove gnome-shell-extension-background-logo
-dnf5 -y remove gnome-shell-extension-apps-menu
-dnf5 -y remove gnome-shell-extension-places-menu
-dnf5 -y remove gnome-shell-extension-launch-new-instance
-dnf5 -y remove gnome-shell-extension-window-list
-
-# -y installed with flatpak instead
-dnf5 -y remove firefox-langpacks
-dnf5 -y remove firefox
-# -y legacy net-tools
-dnf5 -y remove net-tools
-# -y replaced by neovim
-dnf5 -y remove vim
-# replaced by btop
 dnf5 -y remove htop
+dnf5 -y remove net-tools
+dnf5 -y remove vim
+dnf5 -y remove yelp
 
 # TODO:
 # basic tools
+dnf5 -y install ImageMagick
 dnf5 -y install abcde
 dnf5 -y install android-tools
 dnf5 -y install ansible
@@ -52,8 +48,6 @@ dnf5 -y install detox
 dnf5 -y install dfu-util
 dnf5 -y install distrobox
 dnf5 -y install duf
-dnf5 -y install gcc gcc-c++ glibc-static
-dnf5 -y install gdu
 dnf5 -y install esptool
 dnf5 -y install f3
 dnf5 -y install fastfetch
@@ -61,10 +55,12 @@ dnf5 -y install fd-find
 dnf5 -y install ffmpeg
 dnf5 -y install fish
 dnf5 -y install fzf
+dnf5 -y install gcc gcc-c++ glibc-static
+dnf5 -y install gdu
 dnf5 -y install git
+dnf5 -y install gnome-shell-extension-caffeine
 dnf5 -y install gzip
 dnf5 -y install httpx
-dnf5 -y install ImageMagick
 dnf5 -y install iperf3
 dnf5 -y install luajit
 dnf5 -y install make
@@ -74,6 +70,8 @@ dnf5 -y install neovim
 dnf5 -y install newsboat
 dnf5 -y install pandoc
 dnf5 -y install picocom
+dnf5 -y install podman-compose
+dnf5 -y install podman-tui
 dnf5 -y install procs
 dnf5 -y install ripgrep
 dnf5 -y install rsync
@@ -82,15 +80,14 @@ dnf5 -y install shntool
 dnf5 -y install stow
 dnf5 -y install stress-ng
 dnf5 -y install subfinder
+dnf5 -y install tailscale
 dnf5 -y install tcpdump
 dnf5 -y install tealdeer
-dnf5 -y install unzip
-dnf5 -y install yt-dlp
-dnf5 -y install gnome-shell-extension-caffeine
-dnf5 -y install tailscale
 dnf5 -y install tmux
-dnf5 -y install wireshark
+dnf5 -y install unzip
 dnf5 -y install whipper
+dnf5 -y install wireshark
+dnf5 -y install yt-dlp
 
 # dfu-programmer copr
 dnf5 -y copr enable erovia/dfu-programmer
@@ -122,10 +119,10 @@ dnf5 -y install mise
 
 # docker
 dnf5 -y config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
-dnf5 -y install docker-ce
-dnf5 -y install docker-ce-cli
 dnf5 -y install containerd.io
 dnf5 -y install docker-buildx-plugin
+dnf5 -y install docker-ce
+dnf5 -y install docker-ce-cli
 dnf5 -y install docker-compose-plugin
 # FIX: create systemd service that creates docker group and then disables itself permanently
 
@@ -133,16 +130,16 @@ dnf5 -y install docker-compose-plugin
 dnf5 -y group install --with-optional virtualization
 
 # enable services
-systemctl enable podman.socket
-systemctl enable libvirtd.service
 systemctl enable docker.service
+systemctl enable libvirtd.service
+systemctl enable podman.socket
 
 # disable auto-updates (can be enabled again through ujust)
 systemctl disable flatpak-system-update.timer
 systemctl disable rpm-ostreed-automatic.timer
 
 # remove desktop files
-rm -f /usr/share/applications/gcdmaster.desktop
 rm -f /usr/share/applications/btop.desktop
-rm -f /usr/share/applications/nvtop.desktop
+rm -f /usr/share/applications/gcdmaster.desktop
 rm -f /usr/share/applications/nvim.desktop
+rm -f /usr/share/applications/nvtop.desktop
