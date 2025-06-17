@@ -16,6 +16,13 @@ set -ouex pipefail
 dnf5 -y remove gnome-software
 dnf5 -y remove gnome-tour
 dnf5 -y remove gnome-tweaks
+dnf5 -y remove yelp
+dnf5 -y remove gnome-shell-extension-background-logo
+dnf5 -y remove gnome-shell-extension-apps-menu
+dnf5 -y remove gnome-shell-extension-places-menu
+dnf5 -y remove gnome-shell-extension-launch-new-instance
+dnf5 -y remove gnome-shell-extension-window-list
+
 # -y installed with flatpak instead
 dnf5 -y remove firefox-langpacks
 dnf5 -y remove firefox
@@ -96,6 +103,15 @@ dnf5 -y copr disable alternateved/eza
 dnf5 -y copr enable atim/lazygit
 dnf5 -y install lazygit
 dnf5 -y copr disable atim/lazygit
+
+# stuff from bluefin/aurora/bazzite in ublue copr
+# bluefin background: package in copr has more in it
+# 1. get folder from github raw directly here and put into right space manually
+
+# libvirt workaround for u-blue
+dnf5 -y copr enable ublue-os/packages
+dnf5 -y install ublue-os-libvirt-workarounds
+dnf5 -y copr disable ublue-os/packages
 
 # TODO: add blisp manually here
 # TODO: add rs-tftpd
