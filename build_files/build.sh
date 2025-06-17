@@ -15,6 +15,11 @@ set -ouex pipefail
 # no need for them
 dnf5 -y remove firefox
 dnf5 -y remove firefox-langpacks
+dnf5 -y remove htop
+dnf5 -y remove net-tools
+dnf5 -y remove vim
+
+# GNOME specific
 dnf5 -y remove gnome-classic-session
 dnf5 -y remove gnome-shell-extension-apps-menu
 dnf5 -y remove gnome-shell-extension-background-logo
@@ -24,12 +29,11 @@ dnf5 -y remove gnome-shell-extension-window-list
 dnf5 -y remove gnome-software
 dnf5 -y remove gnome-tour
 dnf5 -y remove gnome-tweaks
-dnf5 -y remove htop
-dnf5 -y remove net-tools
-dnf5 -y remove vim
 dnf5 -y remove yelp
 
-# TODO:
+# GNOME specific
+dnf5 -y install gnome-shell-extension-caffeine
+
 # basic tools
 dnf5 -y install ImageMagick
 dnf5 -y install abcde
@@ -58,7 +62,6 @@ dnf5 -y install fzf
 dnf5 -y install gcc gcc-c++ glibc-static
 dnf5 -y install gdu
 dnf5 -y install git
-dnf5 -y install gnome-shell-extension-caffeine
 dnf5 -y install gzip
 dnf5 -y install httpx
 dnf5 -y install iperf3
@@ -104,9 +107,7 @@ dnf5 -y copr disable atim/lazygit
 
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
-# libvirt workaround for u-blue
 dnf5 -y install ublue-os-libvirt-workarounds
-# backgrounds
 dnf5 -y install bluefin-backgrounds
 dnf5 -y copr disable ublue-os/packages
 
