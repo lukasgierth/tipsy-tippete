@@ -40,6 +40,7 @@ dnf5 -y install abcde
 dnf5 -y install android-tools
 dnf5 -y install ansible
 dnf5 -y install aria2
+dnf5 -y install arp-scan
 dnf5 -y install bat
 dnf5 -y install borgbackup
 dnf5 -y install borgmatic
