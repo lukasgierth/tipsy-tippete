@@ -17,6 +17,7 @@ dnf5 -y remove gnome-software
 dnf5 -y remove gnome-tour
 dnf5 -y remove gnome-tweaks
 dnf5 -y remove yelp
+dnf5 -y remove gnome-classic-session
 dnf5 -y remove gnome-shell-extension-background-logo
 dnf5 -y remove gnome-shell-extension-apps-menu
 dnf5 -y remove gnome-shell-extension-places-menu
@@ -104,14 +105,23 @@ dnf5 -y copr enable atim/lazygit
 dnf5 -y install lazygit
 dnf5 -y copr disable atim/lazygit
 
-# stuff from bluefin/aurora/bazzite in ublue copr
-# bluefin background: package in copr has more in it
-# 1. get folder from github raw directly here and put into right space manually
-
+# TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 # libvirt workaround for u-blue
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y install ublue-os-libvirt-workarounds
 dnf5 -y copr disable ublue-os/packages
+
+# INFO: bluefin background: package in copr has more in it, so we need to do it manually here for now. Future: build own package in copr? Do feature/decoupling request in github
+curl -LkSs https://api.github.com/repos/ublue-os/packages/tarball/main -o /tmp/packages.tar.gz;
+tar xf /tmp/packages.tar.gz --directory /tmp
+cd /tmp/ublue-os-packages-*
+mkdir -p /usr/share/backgrounds/bluefin/
+mv packages/bluefin/wallpapers/images/*.jxl /usr/share/backgrounds/bluefin/
+mv packages/bluefin/wallpapers/images/*.xml /usr/share/backgrounds/bluefin/
+mv packages/bluefin/wallpapers/gnome-background-properties/*.xml /usr/share/gnome-background-properties/
+rm -rf /tmp/packages.tar.gz
+rm -rf /tmp/ublue-os-packages-*
+cd /
 
 # TODO: add blisp manually here
 # TODO: add rs-tftpd
