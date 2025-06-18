@@ -9,31 +9,41 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# INFO: reference https://github.com/ublue-os/main/blob/main/packages.json
-# remove packages
-
+# REMOVE
+#
 # no need for them
 dnf5 -y remove firefox
 dnf5 -y remove firefox-langpacks
 dnf5 -y remove htop
 dnf5 -y remove net-tools
 dnf5 -y remove vim
+# KDE specific
+dnf5 -y remove plasma-discover
+dnf5 -y remove plasma-welcome
+dnf5 -y remove kate
+dnf5 -y remove kwrite
+dnf5 -y remove plasma-emojier
+dnf5 -y remove filelight
+dnf5 -y remove khelpcenter
+dnf5 -y remove firewall-config
+dnf5 -y remove kjournald
+dnf5 -y remove kcharselect
+# needed? test
+dnf5 -y remove fcitx5-qt
+dnf5 -y remove fcitx5-gtk
+dnf5 -y remove fcitx5-chinese-addons
+dnf5 -y remove fcitx5-hangul
+dnf5 -y remove fcitx5-libthai
+dnf5 -y remove fcitx5-mozc
+dnf5 -y remove fcitx5-sayura
+dnf5 -y remove fcitx5-unikey
+dnf5 -y remove fcitx5-configtool
+dnf5 -y remove kcm-fcitx5
 
-# GNOME specific
-dnf5 -y remove gnome-classic-session
-dnf5 -y remove gnome-shell-extension-apps-menu
-dnf5 -y remove gnome-shell-extension-background-logo
-dnf5 -y remove gnome-shell-extension-launch-new-instance
-dnf5 -y remove gnome-shell-extension-places-menu
-dnf5 -y remove gnome-shell-extension-window-list
-dnf5 -y remove gnome-software
-dnf5 -y remove gnome-tour
-dnf5 -y remove gnome-tweaks
-dnf5 -y remove yelp
-
-# GNOME specific
-dnf5 -y install gnome-shell-extension-caffeine
-
+# INSTALL
+#
+# KDE specific
+dnf5 -y install flatpak-kcm
 # basic tools
 dnf5 -y install ImageMagick
 dnf5 -y install abcde
@@ -108,8 +118,10 @@ dnf5 -y copr disable atim/lazygit
 
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
+# libvirt workaround for u-blue
 dnf5 -y install ublue-os-libvirt-workarounds
-dnf5 -y install bluefin-backgrounds
+# backgrounds
+dnf5 -y install aurora-backgrounds
 dnf5 -y copr disable ublue-os/packages
 
 # TODO: add blisp manually here
