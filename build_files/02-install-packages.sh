@@ -80,7 +80,7 @@ dnf5 -y copr disable atim/lazygit
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y install ublue-os-libvirt-workarounds
-dnf5 -y install aurora-backgrounds
+dnf5 -y install bluefin-backgrounds
 dnf5 -y copr disable ublue-os/packages
 
 # TODO: add blisp manually here
