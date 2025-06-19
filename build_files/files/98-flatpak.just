@@ -5,7 +5,7 @@ install-recommended-flatpaks:
             com.google.Chrome \
             dev.vencord.Vesktop \
             hu.irl.cameractrls \
-            im.riot.Riot \
+            im.nheko.Nheko \
             io.dbeaver.DBeaverCommunity \
             io.dbeaver.DBeaverCommunity.Client.pgsql \
             io.github.dweymouth.supersonic \
