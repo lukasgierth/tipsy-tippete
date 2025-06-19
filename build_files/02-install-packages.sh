@@ -105,3 +105,5 @@ dnf5 -y install libvirt-daemon-kvm
 dnf5 -y install qemu-kvm
 dnf5 -y install virt-install
 dnf5 -y install virt-manager
+# fixes guest internet
+echo 'firewall_backend = "iptables"' >>/etc/libvirt/network.conf
