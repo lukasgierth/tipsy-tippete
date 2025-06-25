@@ -76,6 +76,10 @@ dnf5 -y copr disable alternateved/eza
 dnf5 -y copr enable atim/lazygit
 dnf5 -y install lazygit
 dnf5 -y copr disable atim/lazygit
+# chezmoi copr
+dnf5 -y copr enable lihaohong/chezmoi
+dnf5 -y install chezmoi
+dnf5 -y copr disable lihaohong/chezmoi
 
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
