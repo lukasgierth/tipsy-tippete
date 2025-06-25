@@ -64,22 +64,13 @@ dnf5 -y install whipper
 dnf5 -y install wireshark
 dnf5 -y install yt-dlp
 
-# dfu-programmer copr
-dnf5 -y copr enable erovia/dfu-programmer
-dnf5 -y install dfu-programmer
-dnf5 -y copr disable erovia/dfu-programmer
-# eza copr
-dnf5 -y copr enable alternateved/eza
-dnf5 -y install eza
-dnf5 -y copr disable alternateved/eza
-# lazygit copr
-dnf5 -y copr enable atim/lazygit
-dnf5 -y install lazygit
-dnf5 -y copr disable atim/lazygit
-# chezmoi copr
-dnf5 -y copr enable lihaohong/chezmoi
+# my own copr
+dnf5 -y copr enable gierth/tiny-tools
 dnf5 -y install chezmoi
-dnf5 -y copr disable lihaohong/chezmoi
+dnf5 -y install dfu-programmer
+dnf5 -y install eza
+dnf5 -y install lazygit
+dnf5 -y copr disable gierth/tiny-tools
 
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
