@@ -66,6 +66,7 @@ dnf5 -y install yt-dlp
 
 # my own copr
 dnf5 -y copr enable gierth/tiny-tools
+dnf5 -y install blisp
 dnf5 -y install chezmoi
 dnf5 -y install dfu-programmer
 dnf5 -y install eza
