@@ -71,6 +71,7 @@ dnf5 -y install chezmoi
 dnf5 -y install dfu-programmer
 dnf5 -y install eza
 dnf5 -y install lazygit
+dnf5 -y install rs-tftpd
 dnf5 -y copr disable gierth/tiny-tools
 
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
