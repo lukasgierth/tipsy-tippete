@@ -16,4 +16,5 @@ install-recommended-misetools:
     implement nodejs
     implement opentofu
     implement talosctl
+    implement trivy
     implement velero
