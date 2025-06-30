@@ -74,14 +74,17 @@ dnf5 -y install lazygit
 dnf5 -y install rs-tftpd
 dnf5 -y copr disable gierth/tiny-tools
 
+# Ansel AppImage
+wget -P /usr/bin/ $(curl -s https://api.github.com/repos/aurelienpierreeng/ansel/releases | jq '.[] | select(.tag_name == "v0.0.0") | .assets[] | select(.name | test(".*x86_64.AppImage$"))' | jq -r -s 'last(.[]) | .browser_download_url')
+pushd /usr/bin && ln -s $(ls | grep Ansel) ansel && chmod 755 /usr/bin/ansel && popd
+cp -f /ctx/files/ansel.desktop /usr/share/applications/ansel.desktop
+cp -f /ctx/files/ansel.svg /usr/share/icons/ansel.svg
+
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y install ublue-os-libvirt-workarounds
 dnf5 -y install aurora-backgrounds
 dnf5 -y copr disable ublue-os/packages
-
-# TODO: add blisp manually here
-# TODO: add rs-tftpd
 
 # mise
 dnf5 -y config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
@@ -102,5 +105,3 @@ dnf5 -y install libvirt-daemon-kvm
 dnf5 -y install qemu-kvm
 dnf5 -y install virt-install
 dnf5 -y install virt-manager
-# fixes guest internet
-echo 'firewall_backend = "iptables"' >>/etc/libvirt/network.conf
