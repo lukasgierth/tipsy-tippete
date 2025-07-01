@@ -66,6 +66,7 @@ dnf5 -y install yt-dlp
 
 # my own copr
 dnf5 -y copr enable gierth/tiny-tools
+dnf5 -y install ansel-bin
 dnf5 -y install blisp
 dnf5 -y install chezmoi
 dnf5 -y install dfu-programmer
@@ -73,12 +74,6 @@ dnf5 -y install eza
 dnf5 -y install lazygit
 dnf5 -y install rs-tftpd
 dnf5 -y copr disable gierth/tiny-tools
-
-# Ansel AppImage
-wget -P /usr/bin/ $(curl -s https://api.github.com/repos/aurelienpierreeng/ansel/releases | jq '.[] | select(.tag_name == "v0.0.0") | .assets[] | select(.name | test(".*x86_64.AppImage$"))' | jq -r -s 'last(.[]) | .browser_download_url')
-pushd /usr/bin && ln -s $(ls | grep Ansel) ansel && chmod 755 /usr/bin/ansel && popd
-cp -f /ctx/files/ansel.desktop /usr/share/applications/ansel.desktop
-cp -f /ctx/files/ansel.svg /usr/share/icons/ansel.svg
 
 # TODO: stuff from bluefin/aurora/bazzite in ublue copr?
 dnf5 -y copr enable ublue-os/packages
