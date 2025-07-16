@@ -7,6 +7,7 @@ dnf5 -y remove firefox
 dnf5 -y remove firefox-langpacks
 dnf5 -y remove htop
 dnf5 -y remove net-tools
+dnf5 -y remove ublue-os-just
 dnf5 -y remove vim
 
 # KDE specific
