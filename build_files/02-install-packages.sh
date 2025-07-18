@@ -93,6 +93,7 @@ dnf5 -y install eza
 dnf5 -y install hex-rs
 dnf5 -y install hurl
 dnf5 -y install lazygit
+dnf5 -y install netscanner
 dnf5 -y install rs-tftpd
 dnf5 -y install sjust
 dnf5 -y install systemctl-tui
