@@ -93,6 +93,7 @@ dnf5 -y install blisp
 dnf5 -y install chezmoi
 dnf5 -y install dfu-programmer
 dnf5 -y install eza
+dnf5 -y install git-cliff
 dnf5 -y install gitoxide
 dnf5 -y install hex-rs
 dnf5 -y install hurl
