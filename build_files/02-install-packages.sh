@@ -61,6 +61,7 @@ dnf5 -y install tcpdump
 dnf5 -y install tealdeer
 dnf5 -y install tmux
 dnf5 -y install unzip
+dnf5 -y install uv
 dnf5 -y install whipper
 dnf5 -y install wireshark
 dnf5 -y install yt-dlp
