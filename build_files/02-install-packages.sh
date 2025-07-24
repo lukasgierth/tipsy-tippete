@@ -95,6 +95,7 @@ dnf5 -y install dfu-programmer
 dnf5 -y install eza
 dnf5 -y install git-cliff
 dnf5 -y install hurl
+dnf5 -y install kbt
 dnf5 -y install lazygit
 dnf5 -y install rs-tftpd
 dnf5 -y install RustScan
