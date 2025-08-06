@@ -107,7 +107,6 @@ dnf5 -y copr disable gierth/tiny-tools
 
 # ublue copr
 dnf5 -y copr enable ublue-os/packages
-dnf5 -y install aurora-backgrounds
 dnf5 -y install ublue-os-libvirt-workarounds
 dnf5 -y install ublue-os-udev-rules # should be in silverblue-main already, just make sure
 dnf5 -y install ublue-polkit-rules
